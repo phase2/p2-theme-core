@@ -26,7 +26,8 @@
     "prototyping"
   ],
   "scripts": {
-    "test": "eslint index.js lib/**"
+    "test": "eslint index.js lib/**",
+    "prepublish": "git push && git push --tags"
   },
   "paths": {
     "patternlab": "",
