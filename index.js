@@ -27,4 +27,15 @@ module.exports = function (grunt, config, tasks) {
     require('./lib/pattern-lab.js')(grunt, config, tasks);
   }
   require('./lib/regression-qa.js')(grunt, config, tasks);
+  
+  tasks.default.push('compile');
+  if (config.features.browserSync) {
+    if (config.browserSync.domain) {
+      tasks.default.push('browserSync:cms');
+    } else {
+      tasks.default.push('browserSync:pl');
+    }
+  }
+  tasks.default.push('watch');
+  
 };
