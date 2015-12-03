@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "test": "eslint index.js lib/**",
-    "prepublish": "git push && git push --tags"
+    "release": "git push && git push --tags && npm publish"
   },
   "paths": {
     "patternlab": "",
