@@ -1,6 +1,12 @@
 'use strict';
 var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
+var plugins = require('gulp-load-plugins')({
+  pattern: [
+    'gulp-*',
+    'gulp.*',
+    'autoprefixer'
+  ]
+});
 // Will result in the following happening:
 //    
 //    plugins.jshint = require('gulp-jshint');
@@ -18,6 +24,10 @@ var tasks = {
 
 if (config.js.enabled) {
   require('../lib/js.gulp.js')(gulp, plugins, config, tasks);
+}
+
+if (config.css.enabled) {
+  require('../lib/css.gulp.js')(gulp, plugins, config, tasks);
 }
 
 gulp.task('compile', tasks.compile);

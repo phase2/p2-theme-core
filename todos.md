@@ -1,0 +1,2 @@
+- [ ] Have JS watch only lint newly changed files
+- [ ] Babel
