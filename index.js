@@ -20,8 +20,8 @@ module.exports = function (grunt, config, tasks) {
     require('./lib/icons.js')(grunt, config, tasks);
   }
   require('./lib/js.js')(grunt, config, tasks);
-  if (config.features.scss) {
-    require('./lib/scss.js')(grunt, config, tasks);
+  if (config.features.css) {
+    require('./lib/css.js')(grunt, config, tasks);
   }
   if (config.features.patternLab) {
     require('./lib/pattern-lab.js')(grunt, config, tasks);
