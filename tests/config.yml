@@ -8,7 +8,8 @@ css:
   sourceComments: false
   sourceMapEmbed: false
   autoPrefixerBrowsers: # https://github.com/ai/browserslist#queries
-    - 'last 2 versions'
+    - last 2 versions
+    - IE >= 9
 js:
   enabled: true
   src: 
