@@ -21,7 +21,9 @@ js:
       - js/src/**/*.js
       - gulpfile.js  
   babel: true
-plDir: pattern-lab/
+patternLab:
+  enabled: true
+  dir: ../../pattern-lab-starter/pattern-lab/
 scssDir: scss/
 scssDest: css/style.css
 scssConfigRoot: ./

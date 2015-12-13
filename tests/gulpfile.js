@@ -30,6 +30,10 @@ if (config.css.enabled) {
   require('../lib/css.gulp.js')(gulp, plugins, config, tasks);
 }
 
+if (config.patternLab.enabled) {
+  require('../lib/pattern-lab.gulp.js')(gulp, plugins, config, tasks);
+}
+
 gulp.task('compile', tasks.compile);
 gulp.task('validate', tasks.validate);
 gulp.task('watch', tasks.watch);
