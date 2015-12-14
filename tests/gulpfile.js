@@ -1,17 +1,10 @@
 'use strict';
 var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')({
-  pattern: [
-    'gulp-*',
-    'gulp.*',
-    'autoprefixer'
-  ]
-});
 // Will result in the following happening:
 //    
 //    plugins.jshint = require('gulp-jshint');
 //    plugins.concat = require('gulp-concat');
-plugins.browserSync = require('browser-sync');
+//plugins.browserSync = require('browser-sync');
 var yaml = require('js-yaml');
 var fs = require('fs');
 var config = yaml.safeLoad(fs.readFileSync('./config.yml', 'utf8'));
@@ -23,19 +16,19 @@ var tasks = {
 };
 
 if (config.js.enabled) {
-  require('../lib/js.gulp.js')(gulp, plugins, config, tasks);
+  require('../lib/js.gulp.js')(gulp, config, tasks);
 }
 
 if (config.css.enabled) {
-  require('../lib/css.gulp.js')(gulp, plugins, config, tasks);
+  require('../lib/css.gulp.js')(gulp, config, tasks);
 }
 
 if (config.icons.enabled) {
-  require('../lib/icons.gulp.js')(gulp, plugins, config, tasks);
+  require('../lib/icons.gulp.js')(gulp, config, tasks);
 }
 
 if (config.patternLab.enabled) {
-  require('../lib/pattern-lab.gulp.js')(gulp, plugins, config, tasks);
+  require('../lib/pattern-lab.gulp.js')(gulp, config, tasks);
 }
 
 gulp.task('compile', tasks.compile);

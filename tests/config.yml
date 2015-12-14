@@ -33,7 +33,7 @@ icons: # https://github.com/nfroidure/gulp-iconfont
   autohint: false
   templates: 
     css:
-      src: icons/templates/icons.template.scss
+      src: icons/templates/_icons.scss
       dest: icons/dest/
     demo:
       src: icons/templates/icons.mustache
@@ -42,6 +42,7 @@ icons: # https://github.com/nfroidure/gulp-iconfont
     - ttf
     - eot
     - woff
+    - svg
 scssDir: scss/
 scssDest: css/style.css
 scssConfigRoot: ./
