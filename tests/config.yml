@@ -24,6 +24,24 @@ js:
 patternLab:
   enabled: true
   dir: ../../pattern-lab-starter/pattern-lab/
+icons: # https://github.com/nfroidure/gulp-iconfont
+  enabled: true
+  src: icons/src/*.svg
+  dest: icons/dest/
+  fontPathPrefix: ../dest/
+  classNamePrefix: icon
+  autohint: false
+  templates: 
+    css:
+      src: icons/templates/icons.template.scss
+      dest: icons/dest/
+    demo:
+      src: icons/templates/icons.mustache
+      dest: icons/dest/
+  formats: 
+    - ttf
+    - eot
+    - woff
 scssDir: scss/
 scssDest: css/style.css
 scssConfigRoot: ./
