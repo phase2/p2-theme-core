@@ -31,6 +31,7 @@ icons: # https://github.com/nfroidure/gulp-iconfont
   fontPathPrefix: ../dest/
   classNamePrefix: icon
   autohint: false
+  normalize: false
   templates: 
     css:
       src: icons/templates/_icons.scss
@@ -54,14 +55,19 @@ features:
   icons: true
   browserSync: true
 browserSync:
+  enabled: true
   port: 3050
   watchFiles:
-    - css/style.css
-    - js/*.js
-#  domain: mysite.dev # enable when full CMS is set up
-  serverDir: ./
-  serverPath: pattern-lab/public/
-  openBrowserAtStart: false
+    # - template.php
+  # domain: mysite.dev # enable when full CMS is set up
+  baseDir: ../../pattern-lab-starter
+  startPath: pattern-lab/public/
+  openBrowserAtStart: true
   # requires above to be true; allows non-default browser to open
-  #browser: Google Chrome
-debug: true
+  browser: 
+    - Google Chrome Canary
+  # Tunnel the Browsersync server through a random Public URL
+  # -> http://randomstring23232.localtunnel.me
+  tunnel: false
+  reloadDelay: 50
+  reloadDebounce: 250
