@@ -20,7 +20,6 @@ js:
     src: 
       - js/src/**/*.js
       - gulpfile.js  
-  babel: true
 patternLab:
   enabled: true
   dir: ../../pattern-lab-starter/pattern-lab/
@@ -44,16 +43,6 @@ icons: # https://github.com/nfroidure/gulp-iconfont
     - eot
     - woff
     - svg
-scssDir: scss/
-scssDest: css/style.css
-scssConfigRoot: ./
-buildModernizrAtStart: true
-regressionTestRoot: pattern-lab/source/_patterns/
-features:
-  scss: true
-  patternLab: true
-  icons: true
-  browserSync: true
 browserSync:
   enabled: true
   port: 3050
