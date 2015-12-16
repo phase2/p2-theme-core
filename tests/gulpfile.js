@@ -30,6 +30,10 @@ if (config.patternLab.enabled) {
   require('../lib/pattern-lab.js')(gulp, config, tasks);
 }
 
+if (config.drupal.enabled) {
+  require('../lib/drupal.js')(gulp, config, tasks);
+}
+
 gulp.task('compile', tasks.compile);
 gulp.task('validate', tasks.validate);
 gulp.task('watch', tasks.watch);

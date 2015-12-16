@@ -43,7 +43,7 @@ icons: # https://github.com/nfroidure/gulp-iconfont
     - eot
     - woff
     - svg
-browserSync:
+browserSync: 
   enabled: true
   port: 3050
   watchFiles:
@@ -60,3 +60,14 @@ browserSync:
   tunnel: false
   reloadDelay: 50
   reloadDebounce: 250
+drupal:
+  enabled: true
+  # when these files change
+  watch:
+    - template.php
+    - templates/**
+    - ../../modules/**/*.{php,module,inc}
+  # run this command
+  command: drush cc all
+  # in this directory
+  dir: ../../../build/html/sites/default/
