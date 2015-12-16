@@ -1,5 +1,5 @@
 module.exports = function (grunt, config, tasks) {
-  "use strict";
+  'use strict';
   // Wrap Grunt's loadNpmTasks() function to allow loading Grunt task modules
   // that are dependencies of Grunt Drupal Tasks.
   // Hat tip: Joe Turgeon via https://github.com/phase2/grunt-drupal-tasks/blob/master/bootstrap.js#L12
