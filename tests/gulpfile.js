@@ -11,23 +11,23 @@ var tasks = {
 };
 
 if (config.browserSync.enabled) {
-  require('../lib/browser-sync.gulp.js')(gulp, config, tasks);
+  require('../lib/browser-sync.js')(gulp, config, tasks);
 }
 
 if (config.js.enabled) {
-  require('../lib/js.gulp.js')(gulp, config, tasks);
+  require('../lib/js.js')(gulp, config, tasks);
 }
 
 if (config.css.enabled) {
-  require('../lib/css.gulp.js')(gulp, config, tasks);
+  require('../lib/css.js')(gulp, config, tasks);
 }
 
 if (config.icons.enabled) {
-  require('../lib/icons.gulp.js')(gulp, config, tasks);
+  require('../lib/icons.js')(gulp, config, tasks);
 }
 
 if (config.patternLab.enabled) {
-  require('../lib/pattern-lab.gulp.js')(gulp, config, tasks);
+  require('../lib/pattern-lab.js')(gulp, config, tasks);
 }
 
 gulp.task('compile', tasks.compile);
