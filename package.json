@@ -26,7 +26,9 @@
     "prototyping"
   ],
   "scripts": {
-    "test": "eslint index.js lib/**",
+    "lint": "eslint index.js lib/**",
+    "mocha": "mocha tests/**/*.test.js",
+    "test": "npm run lint && npm run mocha",
     "release": "git push && git push --tags && npm publish"
   },
   "license": "MIT",
@@ -56,6 +58,7 @@
     "time-grunt": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^1.7.3"
+    "eslint": "^1.7.3",
+    "mocha": "^2.3.4"
   }
 }
