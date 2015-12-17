@@ -40,12 +40,14 @@
     "gulp-eslint": "^1.1.1",
     "gulp-iconfont": "^5.0.1",
     "gulp-if": "^2.0.0",
+    "gulp-inject": "^3.0.0",
     "gulp-postcss": "^6.0.1",
     "gulp-sass": "^2.1.1",
     "gulp-sass-lint": "^1.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "js-yaml": "^3.4.6",
     "lodash": "^3.10.1",
+    "main-bower-files": "^2.11.0",
     "time-grunt": "^1.0.0"
   },
   "devDependencies": {
