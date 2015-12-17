@@ -19,4 +19,8 @@ module.exports = function (gulp, config, tasks) {
   if (config.patternLab.enabled) {
     require('./lib/pattern-lab.js')(gulp, config, tasks);
   }
+
+  if (config.drupal.enabled) {
+    require('./lib/drupal.js')(gulp, config, tasks);
+  }
 };
