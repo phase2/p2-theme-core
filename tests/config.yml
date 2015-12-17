@@ -10,6 +10,10 @@ css:
   autoPrefixerBrowsers: # https://github.com/ai/browserslist#queries
     - last 2 versions
     - IE >= 9
+  #includePaths:
+  # - ./bower_components/bootstrap-sass/assets/stylesheets
+  # - ./bower_components/font-awesome/scss
+  # - ./bower_components/compass-mixins/lib
 js:
   enabled: true
   src: 
