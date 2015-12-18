@@ -10,15 +10,15 @@ css:
   autoPrefixerBrowsers: # https://github.com/ai/browserslist#queries
     - last 2 versions
     - IE >= 9
-  #includePaths:
-  # - ./bower_components/bootstrap-sass/assets/stylesheets
-  # - ./bower_components/font-awesome/scss
-  # - ./bower_components/compass-mixins/lib
+  includePaths:
+    - ./
 js:
   enabled: true
   src: 
     - js/src/**/*.js
-  dest: js/dest/
+    - '!js/all.min.js'
+  destDir: js/dest/
+  destName: all.min.js
   eslint: 
     enabled: true
     src: 
@@ -27,6 +27,9 @@ js:
 patternLab:
   enabled: true
   dir: ../../pattern-lab-starter/pattern-lab/
+  injectFiles:
+    - js/script.js
+  injectBower: true
 icons: # https://github.com/nfroidure/gulp-iconfont
   enabled: true
   src: icons/src/*.svg
@@ -70,8 +73,12 @@ drupal:
   watch:
     - template.php
     - templates/**
-    - ../../modules/**/*.{php,module,inc}
+    - '../../modules/**/*.{php,module,inc}'
   # run this command
   command: drush cc all
   # in this directory
   dir: ../../../build/html/sites/default/
+  inject:
+    bower: true
+    file: theme.info
+
