@@ -1,0 +1,17 @@
+rules:
+  indent:
+    - 1
+    - 2
+  quotes:
+    - 1
+    - single
+  linebreak-style:
+    - 1
+    - unix
+  semi:
+    - 2
+    - always
+env:
+  es6: true
+  node: true
+extends: 'eslint:recommended'

@@ -1,41 +1,26 @@
-module.exports = function (grunt, config, tasks) {
-  "use strict";
-  // Wrap Grunt's loadNpmTasks() function to allow loading Grunt task modules
-  // that are dependencies of Grunt Drupal Tasks.
-  // Hat tip: Joe Turgeon via https://github.com/phase2/grunt-drupal-tasks/blob/master/bootstrap.js#L12
-  grunt._loadNpmTasks = grunt.loadNpmTasks;
-  grunt.loadNpmTasks = function (mod) {
-    var internalMod = grunt.file.exists(__dirname, 'node_modules', mod);
-    if (internalMod) {
-      var pathOrig = process.cwd();
-      process.chdir(__dirname);
-    }
-    grunt._loadNpmTasks(mod);
-    if (internalMod) {
-      process.chdir(pathOrig);
-    }
-  };
+'use strict';
+module.exports = function (gulp, config, tasks) {
+  if (config.browserSync.enabled) {
+    require('./lib/browser-sync.js')(gulp, config, tasks);
+  }
 
-  if (config.features.icons) {
-    require('./lib/icons.js')(grunt, config, tasks);
+  if (config.js.enabled) {
+    require('./lib/js.js')(gulp, config, tasks);
   }
-  require('./lib/js.js')(grunt, config, tasks);
-  if (config.features.scss) {
-    require('./lib/scss.js')(grunt, config, tasks);
+
+  if (config.css.enabled) {
+    require('./lib/css.js')(gulp, config, tasks);
   }
-  if (config.features.patternLab) {
-    require('./lib/pattern-lab.js')(grunt, config, tasks);
+
+  if (config.icons.enabled) {
+    require('./lib/icons.js')(gulp, config, tasks);
   }
-  require('./lib/regression-qa.js')(grunt, config, tasks);
-  
-  tasks.default.push('compile');
-  if (config.features.browserSync) {
-    if (config.browserSync.domain) {
-      tasks.default.push('browserSync:cms');
-    } else {
-      tasks.default.push('browserSync:pl');
-    }
+
+  if (config.patternLab.enabled) {
+    require('./lib/pattern-lab.js')(gulp, config, tasks);
   }
-  tasks.default.push('watch');
-  
+
+  if (config.drupal.enabled) {
+    require('./lib/drupal.js')(gulp, config, tasks);
+  }
 };
