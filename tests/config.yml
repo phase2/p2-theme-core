@@ -81,4 +81,6 @@ drupal:
   inject:
     bower: true
     file: theme.info
-
+    # files to not inject into Drupal theme file
+    # ignoreFiles: 
+    #   - lodash.js
