@@ -44,7 +44,6 @@
     "gulp-eslint": "^1.1.1",
     "gulp-help": "^1.6.1",
     "gulp-iconfont": "^5.0.1",
-    "gulp-if": "^2.0.0",
     "gulp-inject": "^3.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
