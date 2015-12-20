@@ -39,6 +39,7 @@ icons: # https://github.com/nfroidure/gulp-iconfont
   autohint: false
   normalize: false
   templates: 
+    enabled: true
     css:
       src: icons/templates/_icons.scss
       dest: icons/dest/
