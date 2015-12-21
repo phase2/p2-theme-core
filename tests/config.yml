@@ -17,7 +17,7 @@ js:
   src: 
     - js/src/**/*.js
     - '!js/all.min.js'
-  destDir: js/dest/
+  dest: js/dest/
   destName: all.min.js
   babel: true
   eslint: 
