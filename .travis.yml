@@ -5,3 +5,7 @@ node_js:
   - "stable"
   - "4.2"
   - "0.12"
+notifications:
+  email:
+    on_success: never
+    on_failure: always
