@@ -61,8 +61,7 @@
     "lodash": "^3.10.1",
     "main-bower-files": "^2.11.0",
     "mustache": "^2.2.1",
-    "patternlab-node": "^1.0.0",
-    "time-grunt": "^1.0.0"
+    "patternlab-node": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^1.7.3",
