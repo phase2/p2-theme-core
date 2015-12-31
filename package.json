@@ -36,6 +36,9 @@
     "autoprefixer": "^6.1.2",
     "browser-sync": "^2.10.1",
     "chalk": "^1.1.1",
+    "diveSync": "^0.3.0",
+    "fs-extra": "^0.26.3",
+    "glob": "^6.0.3",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-cached": "^1.1.0",
@@ -53,9 +56,12 @@
     "gulp-sass-lint": "^1.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
+    "html-entities": "^1.2.0",
     "js-yaml": "^3.4.6",
     "lodash": "^3.10.1",
     "main-bower-files": "^2.11.0",
+    "mustache": "^2.2.1",
+    "patternlab-node": "^1.0.0",
     "time-grunt": "^1.0.0"
   },
   "devDependencies": {
