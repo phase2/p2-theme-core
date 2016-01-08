@@ -12,6 +12,18 @@ css:
     - IE >= 9
   includePaths:
     - ./node_modules
+  sassdoc: # http://sassdoc.com
+    enabled: true
+    dest: dest/sassdoc
+    verbose: false
+    basePath: https://bitbucket.org/phase2tech/score-web/src/develop/src/themes/score/src/scss
+#    exclude:
+#      - file.scss
+    theme: default
+    sort: # http://sassdoc.com/customising-the-view/#sort
+      - file
+      - group
+      - line>
 js:
   enabled: true
   src:
