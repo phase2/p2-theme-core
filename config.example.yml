@@ -8,7 +8,7 @@ css:
   sourceComments: false
   sourceMapEmbed: false
   # tell the compiler whether you want 'expanded' or 'compressed' output code
-  outputStyle: 'expanded'
+  outputStyle: expanded
   autoPrefixerBrowsers: # https://github.com/ai/browserslist#queries
     - last 2 versions
     - IE >= 9
