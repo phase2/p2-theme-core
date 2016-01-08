@@ -16,3 +16,12 @@ This will replace `node_modules/p2-theme-core/` with a symlink to the `p2-theme-
 
 Now you can make changes and contribute!
 
+## Acceptance Criteria
+
+- Passes `npm test` - Travis runs this and will report it on your PR
+- Branch off `master` and into a `feature/name-of-it` - no `develop` branch going 
+- If you add new config, add it to `config.default.yml`
+
+### Bonus Points 
+
+Adding a new test. See `tests/css/css.test.js`
