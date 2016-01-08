@@ -12,7 +12,7 @@ describe('CSS Compiling', function() {
   this.timeout(5000);
   before(function() {
     console.log('Compiling CSS with "gulp css"');
-    sh('cd tests && gulp css');
+    sh('cd ' + __dirname + ' && gulp css');
   });
   it('should compile CSS', function() {
     var expected = fs.readFileSync(__dirname + '/expected/style.css', 'utf8');
