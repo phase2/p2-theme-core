@@ -7,6 +7,8 @@ css:
   # enables additional debugging information in the output file as CSS comments - only use when necessary
   sourceComments: false
   sourceMapEmbed: false
+  # tell the compiler whether you want 'expanded' or 'compressed' output code
+  outputStyle: expanded
   autoPrefixerBrowsers: # https://github.com/ai/browserslist#queries
     - last 2 versions
     - IE >= 9
@@ -30,6 +32,7 @@ js:
     - src/js/**/*.js
   dest: dest/
   destName: all.min.js
+  sourceMapEmbed: true
   babel: true
   eslint:
     enabled: true
