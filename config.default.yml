@@ -15,7 +15,7 @@ css:
   includePaths:
     - ./node_modules
   sassdoc: # http://sassdoc.com
-    enabled: true
+    enabled: false
     dest: dest/sassdoc
     verbose: false
     basePath: https://bitbucket.org/phase2tech/score-web/src/develop/src/themes/score/src/scss
@@ -33,14 +33,14 @@ js:
   dest: dest/
   destName: all.min.js
   sourceMapEmbed: true
-  babel: true
+  babel: false
   eslint:
     enabled: true
     src:
       - src/js/**/*.js
       - gulpfile.js
 patternLab:
-  enabled: true
+  enabled: false
   src:
     data: src/data/
     patternLabFiles: src/patternlab-files/
@@ -52,7 +52,7 @@ patternLab:
 #    - bower_components/modernizr/modernizr.js
   injectBower: true
 icons: # https://github.com/nfroidure/gulp-iconfont
-  enabled: true
+  enabled: false
   src: src/images/icons/src/*.svg
   dest: dest/
   fontPathPrefix: ''
@@ -73,7 +73,7 @@ icons: # https://github.com/nfroidure/gulp-iconfont
     - woff
     - svg
 browserSync:
-  enabled: true
+  enabled: false
   port: 3050
   watchFiles:
     # - template.php
