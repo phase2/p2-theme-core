@@ -3,7 +3,13 @@ css:
   src:
     - src/scss/**/*.scss
   dest: dest/
-  lint: true
+  flattenDestOutput: true
+  lint:
+    enabled: true
+    failOnError: true
+    # Add to the main src glob - useful for exclusions with `!`
+#    extraSrc:
+#      - '!src/scss/00-config/02-variables/_typography.scss'
   # enables additional debugging information in the output file as CSS comments - only use when necessary
   sourceComments: false
   sourceMapEmbed: false
