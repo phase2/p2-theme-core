@@ -10,6 +10,7 @@ var tasks = {
   'compile': [],
   'watch': [],
   'validate': [],
+  'clean': [],
   'default': []
 };
 

@@ -36,6 +36,7 @@
     "autoprefixer": "^6.1.2",
     "browser-sync": "^2.10.1",
     "chalk": "^1.1.1",
+    "del": "^2.2.0",
     "diveSync": "^0.3.0",
     "fs-extra": "^0.26.3",
     "glob": "^6.0.3",
@@ -45,8 +46,10 @@
     "gulp-concat": "^2.6.0",
     "gulp-consolidate": "^0.1.2",
     "gulp-eslint": "^1.1.1",
+    "gulp-flatten": "^0.2.0",
     "gulp-help": "^1.6.1",
     "gulp-iconfont": "^5.0.1",
+    "gulp-if": "^2.0.0",
     "gulp-inject": "^3.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
@@ -58,14 +61,19 @@
     "gulp-uglify": "^1.5.1",
     "html-entities": "^1.2.0",
     "js-yaml": "^3.4.6",
+    "lazypipe": "^1.0.1",
     "lodash": "^3.10.1",
     "main-bower-files": "^2.11.0",
+    "merge-stream": "^1.0.0",
     "mustache": "^2.2.1",
     "patternlab-node": "pattern-lab/patternlab-node#d01383a",
+    "run-sequence": "^1.1.5",
     "sassdoc": "^2.1.19"
   },
   "devDependencies": {
     "eslint": "^1.7.3",
+    "gulp-debug": "^2.1.2",
+    "gulp-util": "^3.0.7",
     "mocha": "^2.3.4"
   }
 }
