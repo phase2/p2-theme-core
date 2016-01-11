@@ -38,7 +38,8 @@ js:
     - src/js/**/*.js
   dest: dest/
   destName: all.min.js
-  sourceMapEmbed: true
+  sourceMapEmbed: false
+  uglify: false
   babel: false
   eslint:
     enabled: true
