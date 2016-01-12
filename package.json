@@ -35,7 +35,6 @@
   "dependencies": {
     "autoprefixer": "^6.1.2",
     "browser-sync": "^2.10.1",
-    "chalk": "^1.1.1",
     "del": "^2.2.0",
     "diveSync": "^0.3.0",
     "fs-extra": "^0.26.3",
@@ -61,13 +60,10 @@
     "gulp-uglify": "^1.5.1",
     "html-entities": "^1.2.0",
     "js-yaml": "^3.4.6",
-    "lazypipe": "^1.0.1",
     "lodash": "^3.10.1",
     "main-bower-files": "^2.11.0",
-    "merge-stream": "^1.0.0",
     "mustache": "^2.2.1",
     "patternlab-node": "pattern-lab/patternlab-node#d01383a",
-    "run-sequence": "^1.1.5",
     "sassdoc": "^2.1.19"
   },
   "devDependencies": {
