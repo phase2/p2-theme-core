@@ -52,7 +52,6 @@ patternLab:
     data: src/data/
     patternLabFiles: src/patternlab-files/
     patterns: src/patterns/
-    patternLabCss: src/patternlab-css/
   dest: dest/pattern-lab/
 #  config: config--pattern-lab.json # WIP - do not enable
   injectFiles:
