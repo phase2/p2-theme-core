@@ -36,6 +36,7 @@
     "autoprefixer": "^6.1.2",
     "browser-sync": "^2.10.1",
     "del": "^2.2.0",
+    "fs-extra": "^0.26.5",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-cached": "^1.1.0",
