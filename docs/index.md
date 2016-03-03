@@ -1,0 +1,1 @@
+This theme core is to be included in your main project and sets up many Gulp tasks that can work in many flexible ways by passing in different `config` objects, which can be based off of `config.default.yml` (and is merged with).
