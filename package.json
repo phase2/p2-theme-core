@@ -29,7 +29,8 @@
     "lint": "eslint index.js lib/**",
     "mocha": "mocha tests/**/*.test.js",
     "test": "npm run lint && npm run mocha",
-    "release": "git push && git push --tags && npm publish"
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "license": "MIT",
   "dependencies": {
