@@ -1,7 +1,7 @@
 css:
   enabled: true
   src:
-    - src/scss/**/*.scss
+    - scss/**/*.scss
   dest: dest/
   flattenDestOutput: true
   lint:
@@ -35,7 +35,7 @@ css:
 js:
   enabled: true
   src:
-    - src/js/**/*.js
+    - js/**/*.js
   dest: dest/
   destName: all.min.js
   sourceMapEmbed: false
@@ -44,7 +44,7 @@ js:
   eslint:
     enabled: true
     src:
-      - src/js/**/*.js
+      - js/**/*.js
       - gulpfile.js
 patternLab:
   enabled: false
@@ -55,7 +55,7 @@ patternLab:
   injectBower: true
 icons: # https://github.com/nfroidure/gulp-iconfont
   enabled: false
-  src: src/images/icons/src/*.svg
+  src: images/icons/src/*.svg
   dest: dest/
   fontPathPrefix: ''
   classNamePrefix: icon
@@ -64,11 +64,11 @@ icons: # https://github.com/nfroidure/gulp-iconfont
   templates:
     enabled: true
     css:
-      src: src/images/icons/templates/_icons.scss
-      dest: src/scss/00-config/
+      src: images/icons/templates/_icons.scss
+      dest: scss/00-config/
     demo:
-      src: src/images/icons/templates/icons.mustache
-      dest: src/patterns/00-atoms/04-images/
+      src: images/icons/templates/icons.mustache
+      dest: patterns/00-atoms/04-images/
   formats:
     - ttf
     - eot
@@ -81,7 +81,7 @@ browserSync:
     # - template.php
   # domain: mysite.dev # enable when full CMS is set up
   baseDir: ./
-  startPath: dest/pattern-lab/
+  startPath: pattern-lab/public/
   openBrowserAtStart: false
   # requires above to be true; allows non-default browser to open
   browser:
