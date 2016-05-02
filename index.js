@@ -24,11 +24,7 @@ module.exports = function (gulp, config, tasks) {
   }
 
   if (config.patternLab.enabled) {
-    if (config.patternLab.engine && config.patternLab.engine === 'php-twig') {
-      require('./lib/pattern-lab--php-twig.js')(gulp, config, tasks);
-    } else {
-      require('./lib/pattern-lab.js')(gulp, config, tasks);
-    }
+    require('./lib/pattern-lab--php-twig.js')(gulp, config, tasks);
   }
 
   if (config.drupal.enabled) {

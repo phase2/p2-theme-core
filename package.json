@@ -29,7 +29,8 @@
     "lint": "eslint index.js lib/**",
     "mocha": "mocha tests/**/*.test.js",
     "test": "npm run lint && npm run mocha",
-    "release": "git push && git push --tags && npm publish"
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "license": "MIT",
   "dependencies": {
@@ -60,7 +61,6 @@
     "js-yaml": "^3.4.6",
     "lodash": "^4.0.0",
     "main-bower-files": "^2.11.0",
-    "patternlab-node": "1.1.2",
     "sassdoc": "^2.1.19"
   },
   "devDependencies": {

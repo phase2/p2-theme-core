@@ -49,11 +49,7 @@ js:
 patternLab:
   enabled: false
   src:
-    data: src/data/
-    patternLabFiles: src/patternlab-files/
-    patterns: src/patterns/
-  dest: dest/pattern-lab/
-#  config: config--pattern-lab.json # WIP - do not enable
+    root: pattern-lab
   injectFiles:
 #    - bower_components/modernizr/modernizr.js
   injectBower: true
@@ -92,7 +88,7 @@ browserSync:
     - Google Chrome
   # Tunnel the Browsersync server through a random Public URL
   # -> http://randomstring23232.localtunnel.me
-  tunnel: true
+  tunnel: false
   reloadDelay: 50
   reloadDebounce: 750
 drupal:
