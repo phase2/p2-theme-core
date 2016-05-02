@@ -1,5 +1,9 @@
 [![Read the Docs Badge](https://readthedocs.org/projects/p2-theme-core/badge/?version=latest)](http://p2-theme-core.readthedocs.org/en/latest/?badge=latest)
 
+[![NPM](https://nodei.co/npm/p2-theme-core.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/p2-theme-core)
+
+[![NPM](https://nodei.co/npm-dl/p2-theme-core.png?months=6)](https://nodei.co/npm/p2-theme-core)
+
 # Phase2 Theme Core
 
 Here is the core configuration used in [Pattern Lab Starter](http://github.com/phase2/pattern-lab-starter); changes to how that works most likely would be submitted here as a Pull Request. Ideally, the changes to how a Pattern Lab Starter install works would be done by passing in a different `config`. 
