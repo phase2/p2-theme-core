@@ -67,8 +67,8 @@ icons: # https://github.com/nfroidure/gulp-iconfont
       src: images/icons/templates/_icons.scss
       dest: scss/00-config/
     demo:
-      src: images/icons/templates/icons.mustache
-      dest: patterns/00-atoms/04-images/
+      src: images/icons/templates/icons.twig
+      dest: pattern-lab/source/00-atoms/images/
   formats:
     - ttf
     - eot
