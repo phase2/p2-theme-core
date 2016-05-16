@@ -48,8 +48,7 @@ js:
       - gulpfile.js
 patternLab:
   enabled: false
-  src:
-    root: pattern-lab
+  configFile: pattern-lab/config/config.yml
   injectFiles:
 #    - bower_components/modernizr/modernizr.js
   injectBower: true
