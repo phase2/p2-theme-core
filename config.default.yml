@@ -49,6 +49,15 @@ js:
 patternLab:
   enabled: false
   configFile: pattern-lab/config/config.yml
+  watchedExtensions:
+    - twig
+    - json
+    - yaml
+    - yml
+    - md
+    - jpg
+    - jpeg
+    - png
   injectBower: true
 icons: # https://github.com/nfroidure/gulp-iconfont
   enabled: false
