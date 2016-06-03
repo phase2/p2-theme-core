@@ -6,9 +6,8 @@
 
 **This is one of two pieces of our themes:**
 
-- [`generator-p2-theme`](https://github.com/phase2/generator-p2-theme) (aka `yo p2-theme`) - this asks questions and then creates new files to be committed to start off a project's theme.
+- [`pattern-lab-starter`](https://github.com/phase2/pattern-lab-starter) - a starter set of files for Drupal theming that includes a Twig powered Pattern Lab and beginning Sass & other front end tools. Uses `p2-theme-core` for automation. 
 - [`p2-theme-core`](https://github.com/phase2/p2-theme-core) (this repo) - the core gulp tasks that handles most of the theme's automation.
-
 
 # Phase2 Theme Core
 
