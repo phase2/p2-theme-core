@@ -1,4 +1,4 @@
-[![Read the Docs Badge](https://readthedocs.org/projects/p2-theme-core/badge/?version=latest)](http://p2-theme-core.readthedocs.org/en/latest/?badge=latest)
+[![Read the Docs Badge](https://readthedocs.org/projects/p2-theme-core/badge/?version=latest)](http://p2-theme-core.readthedocs.org/en/latest/?badge=latest) [![Build Status](https://travis-ci.org/phase2/p2-theme-core.svg?branch=master)](https://travis-ci.org/phase2/p2-theme-core)
 
 [![NPM](https://nodei.co/npm/p2-theme-core.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/p2-theme-core)
 
