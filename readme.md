@@ -1,4 +1,4 @@
-[![Read the Docs Badge](https://readthedocs.org/projects/p2-theme-core/badge/?version=latest)](http://p2-theme-core.readthedocs.org/en/latest/?badge=latest)
+[![Read the Docs Badge](https://readthedocs.org/projects/p2-theme-core/badge/?version=latest)](http://p2-theme-core.readthedocs.org/en/latest/?badge=latest) [![Build Status](https://travis-ci.org/phase2/p2-theme-core.svg?branch=master)](https://travis-ci.org/phase2/p2-theme-core)
 
 [![NPM](https://nodei.co/npm/p2-theme-core.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/p2-theme-core)
 
@@ -6,9 +6,8 @@
 
 **This is one of two pieces of our themes:**
 
-- [`generator-p2-theme`](https://github.com/phase2/generator-p2-theme) (aka `yo p2-theme`) - this asks questions and then creates new files to be committed to start off a project's theme.
+- [`pattern-lab-starter`](https://github.com/phase2/pattern-lab-starter) - a starter set of files for Drupal theming that includes a Twig powered Pattern Lab and beginning Sass & other front end tools. Uses `p2-theme-core` for automation. 
 - [`p2-theme-core`](https://github.com/phase2/p2-theme-core) (this repo) - the core gulp tasks that handles most of the theme's automation.
-
 
 # Phase2 Theme Core
 
