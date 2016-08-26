@@ -67,6 +67,7 @@ icons: # https://github.com/nfroidure/gulp-iconfont
   classNamePrefix: icon
   autohint: false
   normalize: true
+  useTimestamp: false
   templates:
     enabled: true
     css:
