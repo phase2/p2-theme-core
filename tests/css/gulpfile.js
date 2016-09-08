@@ -1,5 +1,5 @@
 'use strict';
-var gulp = require('gulp-help')(require('gulp'));
+var gulp = require('gulp');
 var config = {
   css: {
     src: 'src/**/*.scss',
@@ -16,9 +16,9 @@ var tasks = {
 
 require('../../index.js')(gulp, config, tasks);
 
-gulp.task('compile', tasks.compile);
-gulp.task('validate', tasks.validate);
-gulp.task('watch', tasks.watch);
-tasks.default.push('compile');
+gulp.task('compile', gulp.parallel(tasks.compile));
+gulp.task('clean', gulp.parallel(tasks.clean));
+gulp.task('validate', gulp.parallel(tasks.validate));
+gulp.task('watch', gulp.parallel(tasks.watch));
 tasks.default.push('watch');
-gulp.task('default', tasks.default);
+gulp.task('default', gulp.parallel(tasks.default));
