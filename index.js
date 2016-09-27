@@ -6,7 +6,7 @@ var _ = require('lodash');
 module.exports = function (gulp, config, tasks) {
   var defaultConfig = yaml.safeLoad(fs.readFileSync(__dirname + '/config.default.yml', 'utf8'));
   config = _.merge(defaultConfig, config);
-  
+
   if (config.browserSync.enabled) {
     require('./lib/browser-sync.js')(gulp, config, tasks);
   }
@@ -15,12 +15,12 @@ module.exports = function (gulp, config, tasks) {
     require('./lib/js.js')(gulp, config, tasks);
   }
 
-  if (config.css.enabled) {
-    require('./lib/css.js')(gulp, config, tasks);
-  }
-
   if (config.icons.enabled) {
     require('./lib/icons.js')(gulp, config, tasks);
+  }
+
+  if (config.css.enabled) {
+    require('./lib/css.js')(gulp, config, tasks);
   }
 
   if (config.patternLab.enabled) {
