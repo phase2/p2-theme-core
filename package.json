@@ -20,7 +20,8 @@
     "mocha": "mocha tests/**/*.test.js",
     "test": "npm run lint && npm run mocha",
     "preversion": "npm run test",
-    "postversion": "git push && git push --tags && npm publish"
+    "postversion": "git push && git push --tags && npm publish",
+    "gulp": "gulp"
   },
   "license": "MIT",
   "dependencies": {
