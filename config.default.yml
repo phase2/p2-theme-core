@@ -108,6 +108,6 @@ drupal:
   command: drush cc all
   # in this directory
   dir: ./
-  inject:
+  inject: # set false here and comment out below to disable asset injection into Drupal, eg `inject: false`
     bower: true
     file: theme.info
