@@ -7,6 +7,8 @@ module.exports = function (gulp, config, tasks) {
   var defaultConfig = yaml.safeLoad(fs.readFileSync(__dirname + '/config.default.yml', 'utf8'));
   config = _.merge(defaultConfig, config);
 
+  require('./lib/startup').gulpTask(gulp, config, tasks);
+
   if (config.browserSync.enabled) {
     require('./lib/browser-sync.js')(gulp, config, tasks);
   }
