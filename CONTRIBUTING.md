@@ -25,3 +25,9 @@ Now you can make changes and contribute!
 ### Bonus Points 
 
 Adding a new test. See `tests/css/css.test.js`
+
+# Testing
+
+To test: `npm test`
+
+To start watches for tests: `npm start`
