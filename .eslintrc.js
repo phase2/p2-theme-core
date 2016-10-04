@@ -7,6 +7,6 @@ module.exports = {
     node: true,
   },
   rules: {
-
+    strict: [0],
   },
 };
