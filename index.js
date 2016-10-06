@@ -1,8 +1,8 @@
 'use strict';
 const _ = require('lodash');
+const defaultConfig = require('./config.default');
 
 module.exports = (gulp, userConfig, tasks) => {
-  const defaultConfig = require('./config.default');
   const config = _.merge(defaultConfig, userConfig);
 
   /* eslint-disable global-require */
