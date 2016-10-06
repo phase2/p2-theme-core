@@ -3,23 +3,29 @@ language: php
 php:
   - 5.5
 env:
-  - TRAVIS_NODE_VERSION="4"
-  - TRAVIS_NODE_VERSION="6"
+  global:
+    - P2_THEME_CORE_DIR=$TRAVIS_BUILD_DIR
+    - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
+  matrix:
+    - TRAVIS_NODE_VERSION="4"
+    - TRAVIS_NODE_VERSION="6"
 git:
   depth: 3
 before_install:
-  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
-  - echo "TRAVIS_BUILD_DIR - $TRAVIS_BUILD_DIR" && echo 'pwd - ' && pwd
-  - git clone https://github.com/phase2/pattern-lab-starter.git ../pattern-lab-starter
-install:
-  - cd ../pattern-lab-starter && npm link ../p2-theme-core
-before_script:
   - php --version
   - node --version
   - npm --version
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - echo "TRAVIS_BUILD_DIR - $TRAVIS_BUILD_DIR" && echo 'pwd - ' && pwd
+  - git clone https://github.com/phase2/pattern-lab-starter.git $PL_STARTER_DIR
+install:
+  - cd $P2_THEME_CORE_DIR && npm install
+  - cd $PL_STARTER_DIR && npm install
+before_script:
+  - cd $PL_STARTER_DIR && npm link $P2_THEME_CORE_DIR
 script:
-  - npm test
-  - cd ../pattern-lab-starter && npm run compile
+  - cd $P2_THEME_CORE_DIR && npm test
+  - cd $PL_STARTER_DIR && npm run compile
 notifications:
   flowdock:
     secure: RBLFcGBNV8iBA3pBGqGzq5o2Kt+X0IESDtuWnamGurhXItdd0Qh8LZwGmbcZdBuncJQ/WvC5/umCZykf0BeMOiu5TnhJKH3ett0qQT8dxJI9aykwbk/+xyCX09tQJ6jejhcDmu394SUlXYb8DBPnlmE345EVbtjFt9Wxo+ZskCo=
