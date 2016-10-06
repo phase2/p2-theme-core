@@ -1,10 +1,8 @@
 'use strict';
-const fs = require('fs');
-const yaml = require('js-yaml');
 const _ = require('lodash');
 
 module.exports = (gulp, userConfig, tasks) => {
-  const defaultConfig = yaml.safeLoad(fs.readFileSync(`${__dirname}/config.default.yml`, 'utf8'));
+  const defaultConfig = require('./config.default');
   const config = _.merge(defaultConfig, userConfig);
 
   /* eslint-disable global-require */
