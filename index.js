@@ -3,10 +3,11 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const _ = require('lodash');
 
-module.exports = (gulp, config, tasks) => {
+module.exports = (gulp, userConfig, tasks) => {
   const defaultConfig = yaml.safeLoad(fs.readFileSync(`${__dirname}/config.default.yml`, 'utf8'));
-  config = _.merge(defaultConfig, config);
+  const config = _.merge(defaultConfig, userConfig);
 
+  /* eslint-disable global-require */
   if (config.browserSync.enabled) {
     require('./lib/browser-sync')(gulp, config, tasks);
   }
@@ -30,11 +31,13 @@ module.exports = (gulp, config, tasks) => {
   if (config.drupal.enabled) {
     require('./lib/drupal')(gulp, config, tasks);
   }
+  /* eslint-enable global-require */
 
   // Instead of `gulp.parallel`, which is what is set in Pattern Lab Starter's `gulpfile.js`, this
   // uses `gulp.series`. Needed to help with the Gulp task dependencies lost going from v3 to v4.
   // We basically need icons compiled before CSS & CSS/JS compiled before inject:pl before pl
   // compile. The order of the `require`s above is the order that compiles run in; not perfect, but
   // it works.
+  // eslint-disable-next-line no-param-reassign
   tasks.compile = gulp.series(tasks.compile);
 };
