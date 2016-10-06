@@ -9,9 +9,9 @@ git:
   depth: 3
 before_install:
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
-  - git clone git@github.com:phase2/pattern-lab-starter.git ../pattern-lab-starter
-install:
   - echo "TRAVIS_BUILD_DIR - $TRAVIS_BUILD_DIR" && echo 'pwd - ' && pwd
+  - git clone https://github.com/phase2/pattern-lab-starter.git ../pattern-lab-starter
+install:
   - cd ../pattern-lab-starter && npm link ../p2-theme-core
 before_script:
   - php --version
