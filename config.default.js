@@ -30,7 +30,7 @@ module.exports = {
       enabled: false,
       dest: 'dest/sassdoc',
       verbose: false,
-      basePath: 'https://bitbucket.org/phase2tech/score-web/src/develop/src/themes/score/src/scss',
+      basePath: '',
       exclude: [],
       theme: 'default',
       // http://sassdoc.com/customising-the-view/#sort
