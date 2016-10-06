@@ -16,10 +16,8 @@
     "prototyping"
   ],
   "scripts": {
-    "lint": "eslint index.js lib/**",
-    "mocha": "mocha tests/**/*.test.js",
-    "test": "npm run lint && npm run mocha",
-    "start": "nodemon --watch index.js --watch ./lib --exec 'npm run lint' ",
+    "test": "eslint index.js lib/**",
+    "start": "nodemon --watch index.js --watch ./lib --exec 'npm test' ",
     "preversion": "npm run test",
     "postversion": "git push && git push --tags && npm publish",
     "gulp": "gulp"
@@ -60,7 +58,6 @@
     "eslint": "^3.4.0",
     "gulp-debug": "^2.1.2",
     "gulp-util": "^3.0.7",
-    "mocha": "^2.3.4",
     "nodemon": "^1.10.2"
   }
 }
