@@ -1,8 +1,39 @@
-language: node_js
-node_js:
-  - "6"
-  - "4.2"
+# This does two main things for testing using node v4 then v6:
+# 1. Installs our deps and runs `npm test`
+# 2. Clones [pattern-lab-starter](https://github.com/phase2/pattern-lab-starter), then `npm link`s this in and runs `npm run compile`
+
+language: php
+# Tests will be for each version in `php` combined with each node version in `env.matrix`
+php:
+  - 5.5
+env:
+  global:
+    - P2_THEME_CORE_DIR=$TRAVIS_BUILD_DIR
+    - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
+  matrix:
+    - TRAVIS_NODE_VERSION="6"
+    - TRAVIS_NODE_VERSION="4"
+git:
+  depth: 3
+before_install:
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  # npm 2 (with node 4) has issues with `npm link` ~ https://github.com/npm/npm/issues/9394
+  - npm update --global npm
+  - php --version
+  - node --version
+  - npm --version
+install:
+# Running tests on this repo first so we can fail fast
+  - cd $P2_THEME_CORE_DIR && npm install
+  - cd $P2_THEME_CORE_DIR && npm test
+before_script:
+# Getting Pattern Lab Starter set up in another directory
+  - git clone https://github.com/phase2/pattern-lab-starter.git $PL_STARTER_DIR
+  - cd $PL_STARTER_DIR && npm install
+  - cd $PL_STARTER_DIR && npm link $P2_THEME_CORE_DIR
+script:
+# Compiling Pattern Lab Starter using this version of P2 Theme Core
+  - cd $PL_STARTER_DIR && npm run compile
 notifications:
-  email:
-    on_success: never
-    on_failure: always
+  flowdock:
+    secure: RBLFcGBNV8iBA3pBGqGzq5o2Kt+X0IESDtuWnamGurhXItdd0Qh8LZwGmbcZdBuncJQ/WvC5/umCZykf0BeMOiu5TnhJKH3ett0qQT8dxJI9aykwbk/+xyCX09tQJ6jejhcDmu394SUlXYb8DBPnlmE345EVbtjFt9Wxo+ZskCo=
