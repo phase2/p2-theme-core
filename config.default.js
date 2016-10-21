@@ -5,6 +5,7 @@ module.exports = {
       'scss/**/*.scss',
     ],
     dest: 'dest/',
+    extraWatches: [],
     flattenDestOutput: true,
     lint: {
       enabled: true,
@@ -75,6 +76,7 @@ module.exports = {
       'png',
     ],
     injectBower: true,
+    extraWatches: [],
   },
   // https://github.com/nfroidure/gulp-iconfont
   icons: {
