@@ -54,6 +54,7 @@ module.exports = {
     babel: false,
     // Will bundle all bower JS dependencies (not devDeps) and create a `bower_components.min.js` file in `js.dest`.
     bundleBower: true,
+    bowerBasePath: './',
     eslint: {
       enabled: true,
       src: [
@@ -75,7 +76,6 @@ module.exports = {
       'jpeg',
       'png',
     ],
-    injectBower: true,
     extraWatches: [],
   },
   // https://github.com/nfroidure/gulp-iconfont
