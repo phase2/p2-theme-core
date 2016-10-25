@@ -19,7 +19,7 @@
     "test": "eslint index.js lib/**",
     "start": "nodemon --watch index.js --watch ./lib --exec 'npm test' ",
     "preversion": "npm run test",
-    "postversion": "git push && git push --tags && npm publish",
+    "postversion": "git push && git push --tags",
     "gulp": "gulp"
   },
   "license": "MIT",
