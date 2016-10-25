@@ -1,39 +1,41 @@
-# This does two main things for testing using node v4 then v6:
-# 1. Installs our deps and runs `npm test`
-# 2. Clones [pattern-lab-starter](https://github.com/phase2/pattern-lab-starter), then `npm link`s this in and runs `npm run compile`
-
 language: php
-# Tests will be for each version in `php` combined with each node version in `env.matrix`
 php:
-  - 5.5
+- 5.5
 env:
   global:
-    - P2_THEME_CORE_DIR=$TRAVIS_BUILD_DIR
-    - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
+  - P2_THEME_CORE_DIR=$TRAVIS_BUILD_DIR
+  - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
   matrix:
-    - TRAVIS_NODE_VERSION="6"
-    - TRAVIS_NODE_VERSION="4"
+  - TRAVIS_NODE_VERSION="6"
+  - TRAVIS_NODE_VERSION="4"
 git:
   depth: 3
 before_install:
-  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
-  # npm 2 (with node 4) has issues with `npm link` ~ https://github.com/npm/npm/issues/9394
-  - npm update --global npm
-  - php --version
-  - node --version
-  - npm --version
+- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
+  && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
+  install $TRAVIS_NODE_VERSION
+- npm update --global npm
+- php --version
+- node --version
+- npm --version
 install:
-# Running tests on this repo first so we can fail fast
-  - cd $P2_THEME_CORE_DIR && npm install
-  - cd $P2_THEME_CORE_DIR && npm test
+- cd $P2_THEME_CORE_DIR && npm install
+- cd $P2_THEME_CORE_DIR && npm test
 before_script:
-# Getting Pattern Lab Starter set up in another directory
-  - git clone https://github.com/phase2/pattern-lab-starter.git $PL_STARTER_DIR
-  - cd $PL_STARTER_DIR && npm install
-  - cd $PL_STARTER_DIR && npm link $P2_THEME_CORE_DIR
+- git clone https://github.com/phase2/pattern-lab-starter.git $PL_STARTER_DIR
+- cd $PL_STARTER_DIR && npm install
+- cd $PL_STARTER_DIR && npm link $P2_THEME_CORE_DIR
 script:
-# Compiling Pattern Lab Starter using this version of P2 Theme Core
-  - cd $PL_STARTER_DIR && npm run compile
+- cd $PL_STARTER_DIR && npm run compile
 notifications:
   flowdock:
     secure: RBLFcGBNV8iBA3pBGqGzq5o2Kt+X0IESDtuWnamGurhXItdd0Qh8LZwGmbcZdBuncJQ/WvC5/umCZykf0BeMOiu5TnhJKH3ett0qQT8dxJI9aykwbk/+xyCX09tQJ6jejhcDmu394SUlXYb8DBPnlmE345EVbtjFt9Wxo+ZskCo=
+deploy:
+  provider: npm
+  on:
+    tags: true
+    repo: phase2/p2-theme-core
+  api_key:
+    secure: BVEdMKKlol4u2h9405UuLcbx+yOg4oUMrZ/C+s25oVDCeuPcWykK1Y2r3HLzyIJj0QkMDYH9GnlJlamL/1j7t+hQuL5LRAZR/jDepN19nMXMNUkrx1Fza7H3Mgo5nEHysxMW7QylDfTbzqbqsC3pt9GNqPPUm9BJjKYNs+Rt/SOTDa9vCKGGCbSyLEiBpCHcFn/g4uKPBCRBqdWffGD7JGptw51GDd8RbDfAj23zSOus/wMgzZQmEMeRC7Ch1Nup+R8ZguRpctI3tr5sKj8r33ECMtdxgzl5wIwZLWqZHsFIHps8spvbzoeDJFtAr6AsIg9K2Cf9M4/6EcQyoTQhlXsRXyMUYiP11XthxBWkTjsg7OAy0zAYlgb7kZHiroDul/cvfGOpZRqGwogJIfYbHLEmT1R8u4ujIZtoiH7Mv/Ne0kQcKKe/F2BxzbRcdgljiVkPk5RIlvn7yLilLA0TOgQBNT39sgoJ+U2Fe/Daql7tyuSrm7AfxzS375Nsnhrf1cJlmenwxUGYrqZE5Kj/5+iqTQpVUdpSC068FOhl+cZsqhXdoq5ERcvi6VnTk6o6UGwChWzErB6aOGSu2h3s6tI7ZkK7+MvMgxEOYQwvot067ygvDmHO2UYODtVzGyXpalQn6B9woXdwptLtx7aX4eUDYFPBnueIVMisKFJo4D8=
+  email:
+    secure: Jf7eRHOAivdFSAmSBG8rSc28PiItiWd+hkifoyGEOZ3eS7domIQPbAwMGnckp5aEQYQYp48ipMW2huNGWLC5DbnqcafoPefBDcwcBg1mRVJDK0Eif9LD0wT2HGT/AhsWwiHfx4+BIa7NvXUsOZ5NcP4YGaDVrfFyaVnkbvDezgJ2AGJ2VXXDL68SdSZCwZlDZqNncwE7tpnZ3qbnGCnu45dbzNGsdNm0Db0aVDIQV+nTQcs/Wyhj7Y3HnFbjRXiXB1XSLqdsNBthfCp5ky34sD0iMvo6I2H48w5JmOVLFChfBpQZKdp8BpGV1FtIHK2mwCMzRTqIAvHHl7e9rxat1DPKr41dS4h5GnPcu5/heGvPl4XIzgHfKRlHzO8P2JBkwPdASGKqvJROrBox+tJrA/GZ0NkF9vj/FhDFWgCLSEnOuNNlQHtlO004HU1GdJE82+6F71XFUsuShvcjEE8ZNE5WJyQgEKV/riY0ZhN930CRwibW9tgwssorp2cLGpD0gcHxqNM54nJPkJCOjllG/bTwVG3XJXMAzH8ZfhZNxvY7WKDMP1+MfTM8DxuSF55t4xZacRJYCU0KjkObvqDxAiw7GPrQX8lOshPXBfHp/YUpr94j1hRWBPWbuQFHg0A6xdTV+3j6pwlzE8TOH/qBYtibkGjEw7MMAaC5jM4mMu4=
