@@ -26,7 +26,7 @@ before_script:
 - cd $PL_STARTER_DIR && npm install
 - cd $PL_STARTER_DIR && npm link $P2_THEME_CORE_DIR
 script:
-- cd $PL_STARTER_DIR && npm run compile && cd $P2_THEME_CORE
+- cd $PL_STARTER_DIR && npm run compile && cd $P2_THEME_CORE_DIR
 notifications:
   flowdock:
     secure: RBLFcGBNV8iBA3pBGqGzq5o2Kt+X0IESDtuWnamGurhXItdd0Qh8LZwGmbcZdBuncJQ/WvC5/umCZykf0BeMOiu5TnhJKH3ett0qQT8dxJI9aykwbk/+xyCX09tQJ6jejhcDmu394SUlXYb8DBPnlmE345EVbtjFt9Wxo+ZskCo=
