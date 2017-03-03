@@ -15,7 +15,7 @@ module.exports = {
     },
     // enables additional debugging information in the output file as CSS comments - only use when necessary
     sourceComments: false,
-    sourceMapEmbed: false,
+    sourceMap: false,
     // tell the compiler whether you want 'expanded' or 'compressed' output code
     outputStyle: 'expanded',
     // https://github.com/ai/browserslist#queries
