@@ -45,7 +45,7 @@ module.exports = {
   js: {
     enabled: true,
     src: [
-      'js/**/*.js',
+      // 'js/**/*.js',
     ],
     dest: 'dest/',
     destName: 'all.min.js',
