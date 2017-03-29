@@ -11,5 +11,6 @@ module.exports = {
     'prefer-spread': [0],
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
+    'no-console': [0],
   },
 };

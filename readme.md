@@ -25,6 +25,7 @@ Ideally, the changes to how a theme install works would be done by passing in a 
 - Pattern Lab Twig compiling & BrowserSync live reload and style injection
 - SVG => Font Icons compiling with support for adding mixins and classes to Scss along with a demo page in Pattern Lab
 - JS compiling via Babel, linting and aggregation
+- WebPack module bundling
 - Drupal file watching to trigger Drush cache clears
 
 All is easily configurable by changing values in your `config.js` file in your project. These values are merged into the `config.default.js` file - look there for the available options and defaults.
