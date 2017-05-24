@@ -23,7 +23,7 @@ install:
 - cd $P2_THEME_CORE_DIR && npm test
 before_script:
 - git clone https://github.com/phase2/pattern-lab-starter.git $PL_STARTER_DIR
-- cd $PL_STARTER_DIR && npm install
+- cd $PL_STARTER_DIR && npm install && npm run setup
 - cd $PL_STARTER_DIR && npm link $P2_THEME_CORE_DIR
 script:
 - cd $PL_STARTER_DIR && npm run compile && cd $P2_THEME_CORE_DIR
