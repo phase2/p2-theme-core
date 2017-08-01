@@ -20,7 +20,7 @@ Now you can make changes and contribute!
 
 - Passes `npm test` - Travis runs this and will report it on your PR
 - Branch off `master` and into a `feature/name-of-it` - no `develop` branch going 
-- If you add new config, add it to `config.default.yml`
+- If you add new config, add it to `config.default.js`
 
 ### Bonus Points 
 
