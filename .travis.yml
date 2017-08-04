@@ -1,23 +1,33 @@
 language: php
 php:
-- 5.5
+  - 5.6
+  - 7.1
 env:
   global:
   - P2_THEME_CORE_DIR=$TRAVIS_BUILD_DIR
   - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
   matrix:
-  - TRAVIS_NODE_VERSION="6"
-  - TRAVIS_NODE_VERSION="4"
+  - CXX=g++-4.8 TRAVIS_NODE_VERSION="6"
+  - CXX=g++-4.8 TRAVIS_NODE_VERSION="8"
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 git:
   depth: 3
 before_install:
-- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
-  && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
-  install $TRAVIS_NODE_VERSION
-- npm update --global npm
-- php --version
-- node --version
-- npm --version
+#- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
+#  && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
+#  install $TRAVIS_NODE_VERSION
+  - . $HOME/.nvm/nvm.sh
+  - nvm install $TRAVIS_NODE_VERSION
+  - nvm use $TRAVIS_NODE_VERSION
+  - npm install -g npm5
+  - php --version
+  - node --version
+  - npm --version
 install:
 - cd $P2_THEME_CORE_DIR && npm install
 - cd $P2_THEME_CORE_DIR && npm test
@@ -30,12 +40,12 @@ script:
 notifications:
   flowdock:
     secure: RBLFcGBNV8iBA3pBGqGzq5o2Kt+X0IESDtuWnamGurhXItdd0Qh8LZwGmbcZdBuncJQ/WvC5/umCZykf0BeMOiu5TnhJKH3ett0qQT8dxJI9aykwbk/+xyCX09tQJ6jejhcDmu394SUlXYb8DBPnlmE345EVbtjFt9Wxo+ZskCo=
-deploy:
-  provider: npm
-  on:
-    tags: true
-    repo: phase2/p2-theme-core
-  api_key:
-    secure: BVEdMKKlol4u2h9405UuLcbx+yOg4oUMrZ/C+s25oVDCeuPcWykK1Y2r3HLzyIJj0QkMDYH9GnlJlamL/1j7t+hQuL5LRAZR/jDepN19nMXMNUkrx1Fza7H3Mgo5nEHysxMW7QylDfTbzqbqsC3pt9GNqPPUm9BJjKYNs+Rt/SOTDa9vCKGGCbSyLEiBpCHcFn/g4uKPBCRBqdWffGD7JGptw51GDd8RbDfAj23zSOus/wMgzZQmEMeRC7Ch1Nup+R8ZguRpctI3tr5sKj8r33ECMtdxgzl5wIwZLWqZHsFIHps8spvbzoeDJFtAr6AsIg9K2Cf9M4/6EcQyoTQhlXsRXyMUYiP11XthxBWkTjsg7OAy0zAYlgb7kZHiroDul/cvfGOpZRqGwogJIfYbHLEmT1R8u4ujIZtoiH7Mv/Ne0kQcKKe/F2BxzbRcdgljiVkPk5RIlvn7yLilLA0TOgQBNT39sgoJ+U2Fe/Daql7tyuSrm7AfxzS375Nsnhrf1cJlmenwxUGYrqZE5Kj/5+iqTQpVUdpSC068FOhl+cZsqhXdoq5ERcvi6VnTk6o6UGwChWzErB6aOGSu2h3s6tI7ZkK7+MvMgxEOYQwvot067ygvDmHO2UYODtVzGyXpalQn6B9woXdwptLtx7aX4eUDYFPBnueIVMisKFJo4D8=
-  email:
-    secure: Jf7eRHOAivdFSAmSBG8rSc28PiItiWd+hkifoyGEOZ3eS7domIQPbAwMGnckp5aEQYQYp48ipMW2huNGWLC5DbnqcafoPefBDcwcBg1mRVJDK0Eif9LD0wT2HGT/AhsWwiHfx4+BIa7NvXUsOZ5NcP4YGaDVrfFyaVnkbvDezgJ2AGJ2VXXDL68SdSZCwZlDZqNncwE7tpnZ3qbnGCnu45dbzNGsdNm0Db0aVDIQV+nTQcs/Wyhj7Y3HnFbjRXiXB1XSLqdsNBthfCp5ky34sD0iMvo6I2H48w5JmOVLFChfBpQZKdp8BpGV1FtIHK2mwCMzRTqIAvHHl7e9rxat1DPKr41dS4h5GnPcu5/heGvPl4XIzgHfKRlHzO8P2JBkwPdASGKqvJROrBox+tJrA/GZ0NkF9vj/FhDFWgCLSEnOuNNlQHtlO004HU1GdJE82+6F71XFUsuShvcjEE8ZNE5WJyQgEKV/riY0ZhN930CRwibW9tgwssorp2cLGpD0gcHxqNM54nJPkJCOjllG/bTwVG3XJXMAzH8ZfhZNxvY7WKDMP1+MfTM8DxuSF55t4xZacRJYCU0KjkObvqDxAiw7GPrQX8lOshPXBfHp/YUpr94j1hRWBPWbuQFHg0A6xdTV+3j6pwlzE8TOH/qBYtibkGjEw7MMAaC5jM4mMu4=
+#deploy:
+#  provider: npm
+#  on:
+#    tags: true
+#    repo: phase2/p2-theme-core
+#  api_key:
+#    secure: BVEdMKKlol4u2h9405UuLcbx+yOg4oUMrZ/C+s25oVDCeuPcWykK1Y2r3HLzyIJj0QkMDYH9GnlJlamL/1j7t+hQuL5LRAZR/jDepN19nMXMNUkrx1Fza7H3Mgo5nEHysxMW7QylDfTbzqbqsC3pt9GNqPPUm9BJjKYNs+Rt/SOTDa9vCKGGCbSyLEiBpCHcFn/g4uKPBCRBqdWffGD7JGptw51GDd8RbDfAj23zSOus/wMgzZQmEMeRC7Ch1Nup+R8ZguRpctI3tr5sKj8r33ECMtdxgzl5wIwZLWqZHsFIHps8spvbzoeDJFtAr6AsIg9K2Cf9M4/6EcQyoTQhlXsRXyMUYiP11XthxBWkTjsg7OAy0zAYlgb7kZHiroDul/cvfGOpZRqGwogJIfYbHLEmT1R8u4ujIZtoiH7Mv/Ne0kQcKKe/F2BxzbRcdgljiVkPk5RIlvn7yLilLA0TOgQBNT39sgoJ+U2Fe/Daql7tyuSrm7AfxzS375Nsnhrf1cJlmenwxUGYrqZE5Kj/5+iqTQpVUdpSC068FOhl+cZsqhXdoq5ERcvi6VnTk6o6UGwChWzErB6aOGSu2h3s6tI7ZkK7+MvMgxEOYQwvot067ygvDmHO2UYODtVzGyXpalQn6B9woXdwptLtx7aX4eUDYFPBnueIVMisKFJo4D8=
+#  email:
+#    secure: Jf7eRHOAivdFSAmSBG8rSc28PiItiWd+hkifoyGEOZ3eS7domIQPbAwMGnckp5aEQYQYp48ipMW2huNGWLC5DbnqcafoPefBDcwcBg1mRVJDK0Eif9LD0wT2HGT/AhsWwiHfx4+BIa7NvXUsOZ5NcP4YGaDVrfFyaVnkbvDezgJ2AGJ2VXXDL68SdSZCwZlDZqNncwE7tpnZ3qbnGCnu45dbzNGsdNm0Db0aVDIQV+nTQcs/Wyhj7Y3HnFbjRXiXB1XSLqdsNBthfCp5ky34sD0iMvo6I2H48w5JmOVLFChfBpQZKdp8BpGV1FtIHK2mwCMzRTqIAvHHl7e9rxat1DPKr41dS4h5GnPcu5/heGvPl4XIzgHfKRlHzO8P2JBkwPdASGKqvJROrBox+tJrA/GZ0NkF9vj/FhDFWgCLSEnOuNNlQHtlO004HU1GdJE82+6F71XFUsuShvcjEE8ZNE5WJyQgEKV/riY0ZhN930CRwibW9tgwssorp2cLGpD0gcHxqNM54nJPkJCOjllG/bTwVG3XJXMAzH8ZfhZNxvY7WKDMP1+MfTM8DxuSF55t4xZacRJYCU0KjkObvqDxAiw7GPrQX8lOshPXBfHp/YUpr94j1hRWBPWbuQFHg0A6xdTV+3j6pwlzE8TOH/qBYtibkGjEw7MMAaC5jM4mMu4=
