@@ -14,7 +14,7 @@ before_install:
 - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
   && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
   install $TRAVIS_NODE_VERSION
-- npm update --global npm
+- npm install -g npm@5
 - php --version
 - node --version
 - npm --version
@@ -22,7 +22,8 @@ install:
 - cd $P2_THEME_CORE_DIR && npm install
 - cd $P2_THEME_CORE_DIR && npm test
 before_script:
-- git clone https://github.com/phase2/pattern-lab-starter.git $PL_STARTER_DIR
+- git clone https://github.com/phase2/particle.git $PL_STARTER_DIR
+- cd $PL_STARTER_DIR && git checkout release/9.x
 - cd $PL_STARTER_DIR && npm install && npm run setup
 - cd $PL_STARTER_DIR && npm link $P2_THEME_CORE_DIR
 script:
