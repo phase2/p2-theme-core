@@ -138,6 +138,8 @@ module.exports = {
       'template.php',
       'templates/**',
     ],
+    // max-width for lines in the theme info.yml
+    lineWidth: 80,
     // run this command
     command: 'drush cc all',
     // in this directory
