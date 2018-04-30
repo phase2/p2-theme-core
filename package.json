@@ -40,7 +40,7 @@
     "gulp-flatten": "^0.2.0",
     "gulp-iconfont": "^8.0.0",
     "gulp-if": "^2.0.1",
-    "gulp-inject": "^4.1.0",
+    "gulp-inject": "4.3.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.1.1",
