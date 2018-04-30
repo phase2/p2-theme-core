@@ -17,7 +17,7 @@ before_install:
 - npm update --global npm
 - php --version
 - node --version
-- npm --version
+#- npm --version
 install:
 - cd $P2_THEME_CORE_DIR && npm install
 - cd $P2_THEME_CORE_DIR && npm test
