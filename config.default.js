@@ -1,4 +1,11 @@
 module.exports = {
+  watch: {
+    options: {
+      // Uncomment 2 lines below to allow polling which necessary to run gulp-watch in a docker container on windows.
+      // interval: 1000, 
+      // usePolling: true,
+    }
+  },
   css: {
     enabled: true,
     src: [
