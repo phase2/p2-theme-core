@@ -64,11 +64,6 @@ module.exports = {
       ],
     },
   },
-  webpack: {
-    enabled: false,
-    // Be sure to create a `webpack.config.js` file ~ https://webpack.js.org/configuration/
-    // config: require('./webpack.config.js'),
-  },
   patternLab: {
     enabled: false,
     configFile: 'pattern-lab/config/config.yml',
@@ -93,6 +88,7 @@ module.exports = {
     classNamePrefix: 'icon',
     autohint: false,
     normalize: true,
+    fontHeight: 1001,
     useTimestamp: false,
     templates: {
       enabled: true,
