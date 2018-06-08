@@ -45,7 +45,7 @@
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^6.1.1",
     "gulp-sass": "^4.0.1",
-    "gulp-sass-glob": "github:tomgrooffer/gulp-sass-glob#99d06af",
+    "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^1.12.1",
     "gulp-stylelint": "^3.2.0",
     "gulp-uglify": "^1.5.1",
