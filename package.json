@@ -54,7 +54,7 @@
     "lodash": "^4.17.10",
     "main-bower-files": "^2.13.1",
     "node-notifier": "^4.6.0",
-    "sassdoc": "^2.5.0",
+    "sassdoc": "^2.5.0"
   },
   "devDependencies": {
     "eslint": "^3.4.0",
