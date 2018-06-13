@@ -1,6 +1,6 @@
 {
   "name": "p2-theme-core",
-  "version": "9.4.7",
+  "version": "10.0.0",
   "description": "Phase2 theme tools for Pattern Lab Starter/Particle v9",
   "main": "index.js",
   "author": {
