@@ -4,8 +4,6 @@ const defaultConfig = require('./config.default');
 module.exports = (gulp, userConfig, tasks) => {
   const config = _.merge(defaultConfig, userConfig);
 
-  console.log('hello');
-
   /* eslint-disable global-require */
   if (config.browserSync.enabled) {
     require('./lib/browser-sync')(gulp, config, tasks);
