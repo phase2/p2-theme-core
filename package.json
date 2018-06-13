@@ -1,5 +1,5 @@
 {
-  "name": "@phase2/p2-theme-core",
+  "name": "p2-theme-core",
   "version": "9.4.7",
   "description": "Phase2 theme tools for Pattern Lab Starter/Particle v9",
   "main": "index.js",

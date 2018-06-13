@@ -4,13 +4,15 @@
 
 [![NPM](https://nodei.co/npm-dl/p2-theme-core.png?months=6)](https://nodei.co/npm/p2-theme-core)
 
+
 # Prerequisites
 
-- [Node](https://nodejs.org) v4 OR v6 (the two [LTS](https://github.com/nodejs/LTS) versions)
+- p2-theme-core v9: Node >=4.0.0 >=8.0.0
+- p2-theme-core v10: Node >=6.0.0 <=8.0.0
 
 **This is one of two pieces of our themes:**
 
-- [`pattern-lab-starter`](https://github.com/phase2/pattern-lab-starter) - a starter set of files for Drupal theming that includes a Twig powered Pattern Lab and beginning Sass & other front end tools. Uses `p2-theme-core` for automation.
+- [`pattern-lab-starter`](https://github.com/phase2/particle/tree/release/9.x) - a starter set of files for Drupal theming that includes a Twig powered Pattern Lab and beginning Sass & other front end tools. Uses `p2-theme-core` for automation.
 - [`p2-theme-core`](https://github.com/phase2/p2-theme-core) (this repo) - the core gulp tasks that handles most of the theme's automation.
 
 # Phase2 Theme Core

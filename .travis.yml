@@ -9,7 +9,6 @@ env:
   matrix:
   - TRAVIS_NODE_VERSION="8"
   - TRAVIS_NODE_VERSION="6"
-  - TRAVIS_NODE_VERSION="4"
 git:
   depth: 3
 before_install:
