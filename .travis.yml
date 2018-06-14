@@ -1,20 +1,22 @@
 language: php
 php:
-- 5.5
+- 5.6
+- 7.1
 env:
   global:
   - P2_THEME_CORE_DIR=$TRAVIS_BUILD_DIR
   - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
   matrix:
+  - TRAVIS_NODE_VERSION="8"
   - TRAVIS_NODE_VERSION="6"
-  - TRAVIS_NODE_VERSION="4"
 git:
   depth: 3
 before_install:
-- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
-  && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
-  install $TRAVIS_NODE_VERSION
-- npm install -g npm@5
+- composer self-update
+- ". $HOME/.nvm/nvm.sh"
+- nvm install $TRAVIS_NODE_VERSION
+- nvm use $TRAVIS_NODE_VERSION
+- npm install -g npm@latest
 - php --version
 - node --version
 - npm --version
@@ -37,6 +39,6 @@ deploy:
     tags: true
     repo: phase2/p2-theme-core
   api_key:
-    secure: BVEdMKKlol4u2h9405UuLcbx+yOg4oUMrZ/C+s25oVDCeuPcWykK1Y2r3HLzyIJj0QkMDYH9GnlJlamL/1j7t+hQuL5LRAZR/jDepN19nMXMNUkrx1Fza7H3Mgo5nEHysxMW7QylDfTbzqbqsC3pt9GNqPPUm9BJjKYNs+Rt/SOTDa9vCKGGCbSyLEiBpCHcFn/g4uKPBCRBqdWffGD7JGptw51GDd8RbDfAj23zSOus/wMgzZQmEMeRC7Ch1Nup+R8ZguRpctI3tr5sKj8r33ECMtdxgzl5wIwZLWqZHsFIHps8spvbzoeDJFtAr6AsIg9K2Cf9M4/6EcQyoTQhlXsRXyMUYiP11XthxBWkTjsg7OAy0zAYlgb7kZHiroDul/cvfGOpZRqGwogJIfYbHLEmT1R8u4ujIZtoiH7Mv/Ne0kQcKKe/F2BxzbRcdgljiVkPk5RIlvn7yLilLA0TOgQBNT39sgoJ+U2Fe/Daql7tyuSrm7AfxzS375Nsnhrf1cJlmenwxUGYrqZE5Kj/5+iqTQpVUdpSC068FOhl+cZsqhXdoq5ERcvi6VnTk6o6UGwChWzErB6aOGSu2h3s6tI7ZkK7+MvMgxEOYQwvot067ygvDmHO2UYODtVzGyXpalQn6B9woXdwptLtx7aX4eUDYFPBnueIVMisKFJo4D8=
+    secure: EUx2PkAsoPz9KGYdIrkqrziQhcAp24jIygAq1yx3ZevVG2aglzW7YykUce+jeRb+TandL7MVqZ90djWwpgVCTR4EtpPyBzG2t/rg5wB590dnTKEzEA+X3IghgVyaxuyX7+39vN5eMUetXYzIqON19GqQlDTDT1CGdFl+xJy+rQjUtfLDv76zYVg2VzYXOOAgiBAgmLGxGIpJG9lOJ7hh+bgcGLGS4C0bJVMJvDaY5MrID4yhasSQGbf++r/zMeHaqiU4CBXNqCaLqtykPLCd/yZqQWLGoVLfEshRMGN16fSzT7SmJhpRWYp9aN2u2kSx4UlcQHXqeL0rCmHgCaT083PUCmZtlY0fFFx8xBjHGa+ZO+L6Kryyqgl2Ra116LtpzBlyNKabyrEEEAnDYKaNsBjg/t3MNTw32pp4C4JCQNXnc+PYyBDwe3mENrrWoXDRMB3TNhU6EEbcBK4fciD7gyOxc1UWOW2OAeaUTLl0OHPUop3sSPiaH1+agz8ormypWtFw4W+rOvUDxRg8cuqsa9XVPCAdTvfJC7Kw3qX2l1lBhH8udVQ+jcZ63LCsTaGtCtf6rm2N0SHIpyLwJbOCSJJDjAZcpja2xLKepEjWiB8irHFbrJBsasDblaUXhlzDRzS/kR9bkb7INX5dG38/trG04nW/PmX00AhBp+qoRTo=
   email:
     secure: Jf7eRHOAivdFSAmSBG8rSc28PiItiWd+hkifoyGEOZ3eS7domIQPbAwMGnckp5aEQYQYp48ipMW2huNGWLC5DbnqcafoPefBDcwcBg1mRVJDK0Eif9LD0wT2HGT/AhsWwiHfx4+BIa7NvXUsOZ5NcP4YGaDVrfFyaVnkbvDezgJ2AGJ2VXXDL68SdSZCwZlDZqNncwE7tpnZ3qbnGCnu45dbzNGsdNm0Db0aVDIQV+nTQcs/Wyhj7Y3HnFbjRXiXB1XSLqdsNBthfCp5ky34sD0iMvo6I2H48w5JmOVLFChfBpQZKdp8BpGV1FtIHK2mwCMzRTqIAvHHl7e9rxat1DPKr41dS4h5GnPcu5/heGvPl4XIzgHfKRlHzO8P2JBkwPdASGKqvJROrBox+tJrA/GZ0NkF9vj/FhDFWgCLSEnOuNNlQHtlO004HU1GdJE82+6F71XFUsuShvcjEE8ZNE5WJyQgEKV/riY0ZhN930CRwibW9tgwssorp2cLGpD0gcHxqNM54nJPkJCOjllG/bTwVG3XJXMAzH8ZfhZNxvY7WKDMP1+MfTM8DxuSF55t4xZacRJYCU0KjkObvqDxAiw7GPrQX8lOshPXBfHp/YUpr94j1hRWBPWbuQFHg0A6xdTV+3j6pwlzE8TOH/qBYtibkGjEw7MMAaC5jM4mMu4=

@@ -52,10 +52,6 @@ module.exports = {
     sourceMapEmbed: false,
     uglify: false,
     babel: false,
-    // Will bundle all bower JS dependencies (not devDeps) and create a `bower_components.min.js` file in `js.dest`.
-    bundleBower: true,
-    bundleBowerExclusions: [],
-    bowerBasePath: './',
     eslint: {
       enabled: true,
       src: [
@@ -63,11 +59,6 @@ module.exports = {
         'gulpfile.js',
       ],
     },
-  },
-  webpack: {
-    enabled: false,
-    // Be sure to create a `webpack.config.js` file ~ https://webpack.js.org/configuration/
-    // config: require('./webpack.config.js'),
   },
   patternLab: {
     enabled: false,
@@ -93,6 +84,7 @@ module.exports = {
     classNamePrefix: 'icon',
     autohint: false,
     normalize: true,
+    fontHeight: 1001,
     useTimestamp: false,
     templates: {
       enabled: true,

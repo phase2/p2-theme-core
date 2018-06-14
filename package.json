@@ -1,11 +1,11 @@
 {
   "name": "p2-theme-core",
-  "version": "9.4.7",
-  "description": "Phase2 Theme Core",
+  "version": "10.0.0",
+  "description": "Phase2 theme tools for Pattern Lab Starter/Particle v9",
   "main": "index.js",
   "author": {
-    "name": "Evan Lovely",
-    "url": "https://github.com/EvanLovely"
+    "name": "Phase2 Technology",
+    "url": "https://www.phase2technology.com/"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "pattern-lab",
-    "prototyping"
+    "prototyping",
+    "gulp"
   ],
   "scripts": {
     "test": "eslint index.js lib/**",
@@ -25,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^6.3.6",
-    "browser-sync": "^2.12.8",
+    "browser-sync": "^2.24.4",
     "del": "^2.2.0",
     "eslint-config-airbnb": "^11.0.0",
     "eslint-plugin-import": "^1.14.0",
@@ -33,33 +34,30 @@
     "eslint-plugin-react": "^6.2.0",
     "glob": "^7.1.1",
     "gulp": "github:gulpjs/gulp#6d71a65",
-    "gulp-babel": "^6.1.1",
+    "gulp-babel": "^6.1.3",
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-eslint": "^3.0.1",
     "gulp-flatten": "^0.2.0",
-    "gulp-iconfont": "^8.0.0",
+    "gulp-iconfont": "^9.2.0",
     "gulp-if": "^2.0.1",
     "gulp-inject": "4.3.1",
     "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
+    "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^6.1.1",
-    "gulp-sass": "^2.3.1",
-    "gulp-sass-glob": "github:tomgrooffer/gulp-sass-glob#99d06af",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-sourcemaps": "^1.12.1",
     "gulp-stylelint": "^3.2.0",
     "gulp-uglify": "^1.5.1",
-    "js-yaml": "^3.6.1",
-    "lodash": "^4.12.0",
-    "main-bower-files": "^2.13.1",
+    "js-yaml": "^3.12.0",
+    "lodash": "^4.17.10",
     "node-notifier": "^4.6.0",
-    "sassdoc": "^2.2.2",
-    "webpack": "^2.3.2"
+    "sassdoc": "^2.5.0"
   },
   "devDependencies": {
     "eslint": "^3.4.0",
     "gulp-debug": "^2.1.2",
-    "gulp-util": "^3.0.7",
-    "nodemon": "^1.10.2"
+    "nodemon": "^1.17.5"
   }
 }

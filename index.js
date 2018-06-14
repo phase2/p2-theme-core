@@ -1,4 +1,3 @@
-'use strict';
 const _ = require('lodash');
 const defaultConfig = require('./config.default');
 
@@ -28,10 +27,6 @@ module.exports = (gulp, userConfig, tasks) => {
 
   if (config.drupal.enabled) {
     require('./lib/drupal')(gulp, config, tasks);
-  }
-
-  if (config.webpack.enabled) {
-    require('./lib/webpack')(gulp, config, tasks);
   }
 
   /* eslint-enable global-require */
