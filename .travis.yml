@@ -7,7 +7,6 @@ env:
   - P2_THEME_CORE_DIR=$TRAVIS_BUILD_DIR
   - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
   matrix:
-  - TRAVIS_NODE_VERSION="6"
   - TRAVIS_NODE_VERSION="8"
   - TRAVIS_NODE_VERSION="10"
 git:
