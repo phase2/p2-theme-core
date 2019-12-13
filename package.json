@@ -48,12 +48,13 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^1.12.1",
-    "gulp-stylelint": "^9.0.0",
+    "gulp-stylelint": "^11.0.0",
     "gulp-uglify": "^1.5.1",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.15",
     "node-notifier": "^4.6.0",
-    "sassdoc": "^2.7.1"
+    "sassdoc": "^2.7.1",
+    "stylelint": "^12.0.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
