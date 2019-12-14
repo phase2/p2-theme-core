@@ -8,7 +8,8 @@ env:
   - PL_STARTER_DIR=$TRAVIS_BUILD_DIR/../pattern-lab-starter
   matrix:
   - TRAVIS_NODE_VERSION="8"
-  - TRAVIS_NODE_VERSION="6"
+  - TRAVIS_NODE_VERSION="10"
+  - TRAVIS_NODE_VERSION="12"
 git:
   depth: 3
 before_install:
