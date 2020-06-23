@@ -26,7 +26,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "^9.8.3",
+    "autoprefixer": "^9.8.4",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "eslint-config-airbnb": "^18.2.0",
